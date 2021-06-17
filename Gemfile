@@ -27,6 +27,7 @@ gem "pg"
 gem "devise"
 gem "bootstrap-sass"
 gem "devise-bootstrap-views", "~> 1.0"
+gem "iex-ruby-client"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
