@@ -1,0 +1,25 @@
+
+<div class="row">
+    <div class="col-9 no-right-padding">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @tracked_stocks.each do |stock| %>
+                    <tr>
+                        <th><%= stock.ticker %></th>
+                        <th><%= stock.name %></th>
+                        <th><%= stock.last_price %></th>
+                        <th>Action placeholder</th>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
