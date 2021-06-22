@@ -1,0 +1,24 @@
+<div class="row search-area">
+    <div class="col-9 no-right-padding">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @friends.each do |friends| %>
+                    <tr>
+                        <th><%= friends.email %></th>
+                        <th><%= friends.first_name %></th>
+                        <th><%= friends.last_name %></th>
+                        <th><%= link_to "Stop following", "#", method: :delete, data: { confirm: "are you sure to unfollow this person?" }, class: "btn btn-sm btn-warning" %></th>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
