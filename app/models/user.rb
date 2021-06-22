@@ -22,7 +22,9 @@ class User < ApplicationRecord
   end
 
   def full_name
-    return "#{first_name.capitalize} #{last_name.capitalize}" if first_name.capitalize || last_name.capitalize
+    firstName = first_name.capitalize
+    lastName = last_name.capitalize
+    return "#{firstName} #{lastName}" if firstName || lastName
     "Anonymous"
   end
 end
