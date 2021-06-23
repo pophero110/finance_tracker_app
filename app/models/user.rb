@@ -28,4 +28,8 @@ class User < ApplicationRecord
     return "#{firstName} #{lastName}" if firstName || lastName
     "Anonymous"
   end
+
+  def self.search(email)
+    where(email: email).first
+  end
 end

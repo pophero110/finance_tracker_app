@@ -10,12 +10,12 @@
                 </tr>
             </thead>
             <tbody>
-                <% @friends.each do |friends| %>
+                <% @friends.each do |friend| %>
                     <tr>
-                        <th><%= friends.email %></th>
-                        <th><%= friends.first_name %></th>
-                        <th><%= friends.last_name %></th>
-                        <th><%= link_to "Stop following", "#", method: :delete, data: { confirm: "are you sure to unfollow this person?" }, class: "btn btn-sm btn-warning" %></th>
+                        <th><%= friend.email %></th>
+                        <th><%= friend.first_name %></th>
+                        <th><%= friend.last_name %></th>
+                        <th><%= link_to "Stop following", friendship_path(friend), method: :delete, data: { confirm: "are you sure to unfollow this person?" }, class: "btn btn-sm btn-warning" %></th>
                     </tr>
                 <% end %>
             </tbody>
