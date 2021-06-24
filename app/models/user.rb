@@ -51,4 +51,8 @@ class User < ApplicationRecord
   def self.email_matches(param)
     matches("email", param)
   end
+
+  def not_friends_with?(user_id)
+    !self.friends.where(id: user_id).exists?
+  end
 end
