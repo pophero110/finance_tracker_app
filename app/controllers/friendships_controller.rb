@@ -1,8 +1,9 @@
 class FriendshipsController < ApplicationController
   def create
     user = User.find(params[:friend_id])
-    @friendship = Friendship.new(user: current_user, friend: user)
-    if @friendship.save
+    # @friendship = Friendship.new(user: current_user, friend: user)
+    current_user.friendships.build(friend_id: user.id)
+    if current_user.save
       flash[:notice] = "You had successfully followed #{user.first_name}"
       redirect_to friends_path
     else
