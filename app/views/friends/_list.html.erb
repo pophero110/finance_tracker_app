@@ -15,10 +15,14 @@
                         <th><%= friend.email %></th>
                         <th><%= friend.first_name %></th>
                         <th><%= friend.last_name %></th>
-                        <th><%= link_to "Stop following", friendship_path(friend), method: :delete, data: { confirm: "are you sure to unfollow this person?" }, class: "btn btn-sm btn-warning" %></th>
+                        <th>
+                            <%= link_to "View Profile", user_path(friend), class: "btn btn-sm btn-success" %>
+                            <%= link_to "Stop following", friendship_path(friend), method: :delete, data: { confirm: "are you sure to unfollow this person?" }, class: "btn btn-sm btn-warning" %>
+                        </th>
                     </tr>
                 <% end %>
             </tbody>
         </table>
     </div>
 </div>
+

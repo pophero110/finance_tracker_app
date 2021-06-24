@@ -1,4 +1,8 @@
+<% if request.path == "/my_portfolio" %>
 <h1>My Porfolio</h1>
+<% else %>
+<h1><%= @user.first_name %>s'profile</h1>
+<% end %>
 <div class="search-area">
     <h3>Search Stock</h3>
     <%= form_tag search_stock_path, remote: true, method: :get do %>

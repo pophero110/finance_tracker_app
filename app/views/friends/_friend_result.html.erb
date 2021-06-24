@@ -9,7 +9,7 @@
                 <tr>
                     <td><strong>First name: </strong><%= user.first_name %></td>
                     <td><strong>Last name: </strong><%= user.last_name %></td>
-                    <td><strong>Profile: </strong><%= link_to "View Profile", "#", class: "btn btn-sm btn-success" %></td>
+                    <td><strong>Profile: </strong><%= link_to "View Profile", user_path(user.id), class: "btn btn-sm btn-success" %></td>
                     <% if current_user.not_friends_with?(user.id) %>
                     <td><%= link_to "Follow?", friendships_path(user: current_user, friend_id: user.id), class: "btn btn-sm btn-success", method: :post %></td>
                     <% else %>
